@@ -1,149 +1,166 @@
-     <style>
-         .AOI_P-Card {
-	    margin-top:3px;   
-	    margin-left:2px;
-	    max-height:110px;
-	    
-            padding: 4px;
-            border: 1px solid #ccc;
-	    border-radius:6px;
-            background-color: #fff;
-            box-shadow: 0 2px 8px 0 #ccc, 0 2px 6px 0 #ccc;
-        }
-        .AOI_P-Card .title {
-            text-transform: uppercase;
-            margin-bottom: 4px;
-        }
-        .AOI_P-Card .AOI_P-item-row {
-            display: flex;
-	    flex-wrap:wrap;
-            margin-bottom: 2px;
-        }
-        .AOI_P-Card .AOI_P-item-row .item-value {
-            margin-left: auto;
-        }
-	.AOI_P-Card .AOI_P-item-row .AOI_P-item-name {
-           font-size:11px;
-	
-        }
-	
+<style>
+    .AOI_P-Card {
+   margin-top:3px;   
+   margin-left:2px;
+   max-height:110px;
+   
+       padding: 4px;
+       border: 1px solid #ccc;
+   border-radius:6px;
+       background-color: #fff;
+       box-shadow: 0 2px 8px 0 #ccc, 0 2px 6px 0 #ccc;
+   }
+   .AOI_P-Card .title {
+       text-transform: uppercase;
+       margin-bottom: 4px;
+   }
+   .AOI_P-Card .AOI_P-item-row {
+       display: flex;
+   flex-wrap:wrap;
+       margin-bottom: 2px;
+   }
+   /* .AOI_P-Card .AOI_P-item-row .item-value {
+       margin-left: auto;
+   } */
+.AOI_P-Card .AOI_P-item-row .AOI_P-item-name {
+      font-size:11px;
+
+   }
 
 
-	.background-barP {
-            margin-top:2px;
-	    width: 80%;
-            background: #fff !important;
-            height: 9px;
-            position: relative;
-        }
+
+.background-barP {
+       margin-top:2px;
+   width: 80%;
+       background: #fff !important;
+       height: 9px;
+       position: relative;
+   }
 
 
-	.AOI_P-item-value-label{
-	font-size:12px !important;
-	}
-
-
-        #AOI_PBudVal+.background-barP .bar-indicatorP {
-            background-color:#cad7e3;
-            position: absolute;
-            top: 0px;
-            height: 9px;
-        }
-
-
-        #AOI_PActVal+.background-barP .bar-indicatorP {
-            background-color:#72c3f3;
-            position: absolute;
-            top: 0px;
-            height: 9px;
-	}
-
-
-        #AOI_PVal+.background-barP .bar-indicatorP {
-            background-color:#cce5fc;
-            position: absolute;
-            top: 0px;
-            height: 9px;
-        }
-
-
-        #AOI_PActVal {
-	    border-radius: 10px;
-	    text-align: center;
-	    height: 20px;
-	    width: 65px;
-	    padding: 0px 0px 0px 0px;
+.AOI_P-item-value-label{
+font-size:12px !important;
 }
 
-	#AOI_PBudVal {
-	    border-radius: 10px;
-	    text-align: center;
-	    height: 20px;
-	    width: 55px;
-	    padding: 0px 0px 0px 0px;
-	    background:#cad7e3;
-	}
 
-	#AOI_PVal {
-	    border-radius: 10px;
-	    text-align: center;
-	    height: 20px;
-	    width: 55px;
-	    padding: 0px 0px 0px 0px;
-	    background:#cce5fc;
-	}
-	
+   #AOI_PBudVal+.background-barP .bar-indicatorP {
+       background-color:#cad7e3;
+       position: absolute;
+       top: 0px;
+       height: 9px;
+   }
 
 
-    </style>
+   #AOI_PActVal+.background-barP .bar-indicatorP {
+       background-color:#72c3f3;
+       position: absolute;
+       top: 0px;
+       height: 9px;
+}
+
+
+   #AOI_PVal+.background-barP .bar-indicatorP {
+       background-color:#cce5fc;
+       position: absolute;
+       top: 0px;
+       height: 9px;
+   }
+
+
+   #AOI_PActVal {
+   border-radius: 10px;
+   text-align: center;
+   height: 20px;
+   width: 65px;
+   padding: 0px 0px 0px 0px;
+}
+
+#AOI_PBudVal {
+   border-radius: 10px;
+   text-align: center;
+   height: 20px;
+   width: 55px;
+   padding: 0px 0px 0px 0px;
+   background:#cad7e3;
+}
+
+#AOI_PVal {
+   border-radius: 10px;
+   text-align: center;
+   height: 20px;
+   width: 55px;
+   padding: 0px 0px 0px 0px;
+   background:#cce5fc;
+}
+
+.w65 {
+    width: 65px;
+}
+.mlAuto {
+    margin-left: auto;
+}
+
+.mtd-heading, .ytd-heading, .mtdVal, .ytdVal{
+    text-align: center;
+}
+
+.ytd-heading {
+    font-size: 12px !important;
+}
+
+
+</style>
 
 
 
 <body>
-    
 
 
 
 
-    <div id="ytdAOI_PDiv1" class="AOI_P-Card AOI_P-Card-budget" style="position:relative; left:0px; top:0px;">
-	<div class="AOI_P-item-row">
-	<div id="mtd-AOI" class="AOI_P-item-name AOI_P-item-value-label">MTD</div>
-		<div id="ytd-AOI" class="item-value">YTD
-            </div>
-	</div>
-        <div class="AOI_P-item-row">
-	
-	
-            <div class="AOI_P-item-name AOI_P-item-value-label">AOI (MTD)</div>
 
-            <div id="AOI_PActVal" class="item-value item-value-bigvalue"><SpotfireControl id="c9e2d7c4ad244c5cb6db5f7c40e6253e" /></div>
-		
-		<!--<div class="background-barP">&nbsp;
-                <div class="bar-indicatorP">&nbsp;</div>
-            </div>-->
-        </div>
+<div id="ytdAOI_PDiv1" class="AOI_P-Card AOI_P-Card-budget" style="position:relative; left:0px; top:0px;">
+<div class="AOI_P-item-row">
+    <div class="AOI_P-item-name AOI_P-item-value-label">&nbsp;</div>
+<div id="mtd-AOI" class="AOI_P-item-name AOI_P-item-value-label w65 mlAuto mtd-heading">MTD</div>
+   <div id="ytd-AOI" class="item-value w65 ytd-heading">YTD
+       </div>
+</div>
+   <div class="AOI_P-item-row">
 
 
-        <div class="AOI_P-item-row">
-            <div class="AOI_P-item-name AOI_P-item-value-label">Budget (MTD)</div>
-            <div id="AOI_PBudVal" class="item-value item-value-bigvalue"><SpotfireControl id="ec29d7ef3dda4548b17d385a783794b8" /></div>
-	   <!-- <div class="background-barP">&nbsp;
-                <div class="bar-indicatorP">&nbsp;</div>
-            </div> -->
-        </div>
+       <div class="AOI_P-item-name AOI_P-item-value-label">AOI (MTD)</div>
+
+       <div id="AOI_PActVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="c9e2d7c4ad244c5cb6db5f7c40e6253e" /></div>
+        <div class="w65 ytdVal">78</div>
+   <!--<div class="background-barP">&nbsp;
+           <div class="bar-indicatorP">&nbsp;</div>
+       </div>-->
+   </div>
 
 
-	
-	<div class="AOI_P-item-row">
-		<div class="AOI_P-item-name AOI_P-item-value-label">Forecast (MTD)</div>
-		
+   <div class="AOI_P-item-row">
+       <div class="AOI_P-item-name AOI_P-item-value-label">Budget (MTD)</div>
+       <div id="AOI_PBudVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="ec29d7ef3dda4548b17d385a783794b8" /></div>
+       <div class="w65 ytdVal">78</div>
+  <!-- <div class="background-barP">&nbsp;
+           <div class="bar-indicatorP">&nbsp;</div>
+       </div> -->
+   </div>
+
+
+
+<div class="AOI_P-item-row">
+   <div class="AOI_P-item-name AOI_P-item-value-label">Forecast (MTD)</div>
+   
 <span id="compare_P" style="visibility:hidden"><SpotfireControl id="1a28386c9d1d4298ae97f0bb85579e5a" /></span>
 
-<div id="AOI_PVal" class="item-value item-value-bigvalue"><SpotfireControl id="ab96ff6d71e84898bbbe716c9c5f8579" /></div>
-	    <!-- <div class="background-barP">&nbsp; 
-                <div class="bar-indicatorP">&nbsp;</div>	    
-            </div> -->
-        </div>
+<div id="AOI_PVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="ab96ff6d71e84898bbbe716c9c5f8579" /></div>
+<div class="w65 ytdVal">78</div>
+   <!-- <div class="background-barP">&nbsp; 
+           <div class="bar-indicatorP">&nbsp;</div>	    
+       </div> -->
+   </div>
 
 </div>
 
@@ -155,25 +172,25 @@
 
 
 $("#compare_P").on('DOMSubtreeModified',function(){
-	if(!isNaN(parseFloat($(this).text()))) {
-	 var compare_P = parseFloat($(this).text());
+if(!isNaN(parseFloat($(this).text()))) {
+var compare_P = parseFloat($(this).text());
 
 
 
-	 if(compare_P == 1) {
-	 $("#AOI_PActVal").css("background", "#84d9a3");
-	 }
+if(compare_P == 1) {
+$("#AOI_PActVal").css("background", "#84d9a3");
+}
 
-	 else if (compare_P == 2) {
-	  $("#AOI_PActVal").css("background", "#f8e487");
-	 }
+else if (compare_P == 2) {
+ $("#AOI_PActVal").css("background", "#f8e487");
+}
 
-	else {
-	  $("#AOI_PActVal").css("background", "#F58D8D");
-	}
-	}
-		 
-  })
+else {
+ $("#AOI_PActVal").css("background", "#F58D8D");
+}
+}
+    
+})
 
 
 </script>
