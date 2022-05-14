@@ -3,7 +3,7 @@
 	    margin-top:2px; 
 	    margin-left:5px; 
 	    max-height:110px;
-	    max-width: 200px;
+	    max-width: 250px;
             padding: 4px;
             border: 1px solid #ccc;
 	    border-radius:6px;
@@ -102,6 +102,24 @@
 	    background:#cad7e3;
 	}
 
+	#headingMTD {
+		margin-left: auto;
+		width: 65px;
+		text-align: center;
+	}
+	.ytdVal, .ytdPercent, #headingYTD {
+		width: 65px;
+		text-align: center;
+	}
+	.mr-10 {
+		margin-right: 14px;
+	}
+	.ytdPercent {
+		padding: 0px 0px 0px 0px;
+    	background: skyblue;
+		border-radius: 10px;
+	}
+
 
 
     </style>
@@ -110,17 +128,26 @@
 
 <body>
     <div id="ytdWinODiv1" class="WinO-Card WinO-Card-budget">
+		<div class="WinO-item-row">
+            <div class="WinO-item-name WinO-item-value-label">&nbsp;</div>
+		<div id="headingMTD" class="mr-10">MTD</div>
+		<div id="headingYTD">YTD
+            </div>
+        </div>
         <div class="WinO-item-row">
             <div class="WinO-item-name WinO-item-value-label">Win Rate # (<SpotfireControl id="f724aa9980a041eaaa2547e167fc16a9" />) : </div>
-		<div id="WinOActVal" class="item-value item-value-ActPer"><SpotfireControl id="99f05cad0790408b9566ba2421e82c2f" /></div>
-		<div >&nbsp;
-                <div >&nbsp;</div>
+		<div id="WinOActVal" class="item-value item-value-ActPer mr-10"><SpotfireControl id="99f05cad0790408b9566ba2421e82c2f" /></div>
+		<div class="ytdPercent">
+			25%
             </div>
         </div>
 
         <div class="WinO-item-row">
             <div class="WinO-item-name WinO-item-value-label">Won Orders (<SpotfireControl id="a448de3c864040faa830feab4e498901" />)</div>
-            <div id="WinOBudVal" class="item-value item-value-bigvalue"><SpotfireControl id="7618d1a47c0a402b8fa5a66fdb6b3bb9" /></div>
+            <div id="WinOBudVal" class="item-value item-value-bigvalue mr-10"><SpotfireControl id="7618d1a47c0a402b8fa5a66fdb6b3bb9" /></div>
+			<div class="ytdVal">
+				26
+				</div>
 	    <div class="background-bar">&nbsp;
                 <div class="bar-indicator">&nbsp;</div>
             </div>
@@ -131,7 +158,10 @@
 		  
 <span id="compare_O" style="visibility:hidden"></span>
           
-<div id="WinOVal" class="item-value item-value-bigvalue"><SpotfireControl id="6c3f55b0b473488fa8a3024b1b3e2be2" /></div>
+<div id="WinOVal" class="item-value item-value-bigvalue mr-10"><SpotfireControl id="6c3f55b0b473488fa8a3024b1b3e2be2" /></div>
+<div class="ytdVal">
+	26
+	</div>
 	    <div class="background-bar">&nbsp;
                 <div class="bar-indicator">&nbsp;</div>
 	    
@@ -216,6 +246,7 @@ else {
 })
 
 </script>
+
 
 
 
