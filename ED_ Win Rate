@@ -1,0 +1,224 @@
+     <style>
+        .WinO-Card {
+	    margin-top:2px; 
+	    margin-left:5px; 
+	    max-height:110px;
+	    max-width: 200px;
+            padding: 4px;
+            border: 1px solid #ccc;
+	    border-radius:6px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px 0 #ccc, 0 2px 6px 0 #ccc;
+        }
+        .WinO-Card .title {
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .WinO-Card .WinO-item-row {
+            display: flex;
+	    flex-wrap:wrap;
+            margin-bottom: 2px;
+        }
+        .WinO-Card .WinO-item-row .item-value {
+            margin-left: auto;
+        }
+	.WinO-Card .WinO-item-row .WinO-item-name {
+           font-size:11px;
+	
+        }
+	
+	.WinO-Card .WinO-item-row .item-value.item-value-ActPer span{
+		font-size:14px !important;
+		
+	}
+
+	.background-bar {
+            margin-top:2px;
+	    width: 80%;
+            background: #fff !important;
+            height: 9px;
+            position: relative;
+        }
+	.item-value-bigvalue span{
+	font-size:14px !important;
+	}
+
+	.WinO-item-value-label{
+	font-size:12px !important;
+	}
+
+	.WinO-Card .WinO-item-row .item-value.rpBudget span {
+	color: #4a4a4a !important;
+	}	 
+
+	
+        #WinOActVal+.background-bar .bar-indicator {
+            background-color:#72c3f3;
+            position: absolute;
+            top: 0px;
+            height: 9px;
+        }
+
+        #WinOBudVal+.background-bar .bar-indicator {
+            background-color:#cce5fc;
+            position: absolute;
+            top: 0px;
+            height: 9px;
+        }
+
+        #WinOVal+.background-bar .bar-indicator {
+            background-color:#cad7e3;
+            position: absolute;
+            top: 0px;
+            height: 9px;
+        }
+
+
+
+        #WinOActVal {
+	    border-radius: 10px;
+	    text-align: center;
+	    height: 20px;
+	    width: 65px;
+	    padding: 0px 0px 0px 0px;
+	    background:skyblue;
+}
+
+        #WinOBudVal {
+	    border-radius: 10px;
+	    text-align: center;
+	    height: 20px;
+	    width: 55px;
+	    padding: 0px 0px 0px 0px;
+	    background:#cce5fc;
+}
+
+	#WinOVal {
+	    border-radius: 10px;
+	    text-align: center;
+	    height: 20px;
+	    width: 55px;
+	    padding: 0px 0px 0px 0px;
+	    background:#cad7e3;
+	}
+
+
+
+    </style>
+
+
+
+<body>
+    <div id="ytdWinODiv1" class="WinO-Card WinO-Card-budget">
+        <div class="WinO-item-row">
+            <div class="WinO-item-name WinO-item-value-label">Win Rate # (<SpotfireControl id="f724aa9980a041eaaa2547e167fc16a9" />) : </div>
+		<div id="WinOActVal" class="item-value item-value-ActPer"><SpotfireControl id="99f05cad0790408b9566ba2421e82c2f" /></div>
+		<div >&nbsp;
+                <div >&nbsp;</div>
+            </div>
+        </div>
+
+        <div class="WinO-item-row">
+            <div class="WinO-item-name WinO-item-value-label">Won Orders (<SpotfireControl id="a448de3c864040faa830feab4e498901" />)</div>
+            <div id="WinOBudVal" class="item-value item-value-bigvalue"><SpotfireControl id="7618d1a47c0a402b8fa5a66fdb6b3bb9" /></div>
+	    <div class="background-bar">&nbsp;
+                <div class="bar-indicator">&nbsp;</div>
+            </div>
+        </div>
+	
+	<div class="WinO-item-row">
+		<div class="WinO-item-name WinO-item-value-label">Lost Orders (<SpotfireControl id="ef8a212eecfd4590a28facb129c4e499" />)</div>
+		  
+<span id="compare_O" style="visibility:hidden"></span>
+          
+<div id="WinOVal" class="item-value item-value-bigvalue"><SpotfireControl id="6c3f55b0b473488fa8a3024b1b3e2be2" /></div>
+	    <div class="background-bar">&nbsp;
+                <div class="bar-indicator">&nbsp;</div>
+	    
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+<script>
+
+$(document).ready(function(){
+var WinOActVal = document.getElementById('WinOActVal');
+$(WinOActVal).on('DOMSubtreeModified',function(){
+
+	 var Act=$("#WinOActVal").text();
+	 Act2=parseFloat(Act);
+	//alert(Act2)
+
+
+	if(Act2>=0) {
+
+	  $('#WinOActVal+.background-bar .bar-indicator').css("width",Act2);
+}	
+
+else {
+	  $('#WinOActVal+.background-bar .bar-indicator').css("width","1px");
+}
+	
+  })
+})
+
+
+$(document).ready(function(){
+var WinOBudVal = document.getElementById('WinOBudVal');
+$(WinOBudVal).on('DOMSubtreeModified',function(){
+
+	 var Bud=$("#WinOBudVal").text();
+	 Bud1=Bud.replace(',', '');
+	 Bud2=parseFloat(Bud1)/30;
+	 //alert(Bud2);
+
+	if(Bud2>=0) {
+
+	  $('#WinOBudVal+.background-bar .bar-indicator').css("width",Bud2);
+}	
+
+else {
+	  $('#WinOBudVal+.background-bar .bar-indicator').css("width","1px");
+}
+	
+  })
+})
+
+
+$(document).ready(function(){
+var WinOVal = document.getElementById('WinOVal');
+$(WinOVal).on('DOMSubtreeModified',function(){
+
+	 
+	 var For=$("#WinOVal").text();
+	 For1=For.replace(',', '');
+	 For2=parseFloat(For1)/30;
+	 //alert(For2);
+
+
+	if(For2>=0) {
+
+	  $('#WinOVal+.background-bar .bar-indicator').css("width",For2);
+}	
+
+else {
+	  $('#WinOVal+.background-bar .bar-indicator').css("width","1px");
+}
+ 	
+  })
+})
+
+</script>
+
+
+
+
+
+
