@@ -31,7 +31,7 @@
 
 .background-barP {
        margin-top:2px;
-   width: 80%;
+	width: 80%;
        background: #fff !important;
        height: 9px;
        position: relative;
@@ -109,7 +109,7 @@ font-size:12px !important;
 }
 .mtd-heading{
 
-	margin-left:110px
+	margin-left:auto;
 }
 
 #AOI_PActVal2{
@@ -134,7 +134,7 @@ font-size:12px !important;
 <div id="ytdAOI_PDiv1" class="AOI_P-Card AOI_P-Card-budget" style="position:relative; left:0px; top:0px;">
 <div class="AOI_P-item-row">
     <div class="AOI_P-item-name AOI_P-item-value-label">&nbsp;</div>
-<div id="mtd-AOI" class="AOI_P-item-name AOI_P-item-value-label w65 mlAuto mtd-heading">MTD</div>
+<div id="mtd-AOI" class="AOI_P-item-name AOI_P-item-value-label w65  mtd-heading">MTD</div>
    <div id="ytd-AOI" class="item-value w65 ytd-heading">YTD
        </div>
 </div>
