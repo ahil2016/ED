@@ -17,7 +17,7 @@
    .AOI_P-Card .AOI_P-item-row {
        display: flex;
    flex-wrap:wrap;
-       margin-bottom: 2px;
+       margin-bottom: 7px;
    }
    /* .AOI_P-Card .AOI_P-item-row .item-value {
        margin-left: auto;
@@ -107,7 +107,19 @@ font-size:12px !important;
 .ytd-heading {
     font-size: 12px !important;
 }
+.mtd-heading{
 
+	margin-left:110px
+}
+
+#AOI_PActVal2{
+	border-radius: 10px;
+   text-align: center;
+   height: 20px;
+   
+   padding: 0px 0px 0px 0px;
+   background:#cce5fc;
+}
 
 </style>
 
@@ -129,10 +141,10 @@ font-size:12px !important;
    <div class="AOI_P-item-row">
 
 
-       <div class="AOI_P-item-name AOI_P-item-value-label">AOI (MTD)</div>
+       <div class="AOI_P-item-name AOI_P-item-value-label">AOI</div>
 
-       <div id="AOI_PActVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="c9e2d7c4ad244c5cb6db5f7c40e6253e" /></div>
-        <div class="w65 ytdVal">78</div>
+       <div id="AOI_PActVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="8973274235f34276b06f9c4ea5234651" /></div>
+        <div id="AOI_PActVal2" class="w65 ytdVal"><SpotfireControl id="bcdbcbc0251046408d00897b3f91f873" /></div>
    <!--<div class="background-barP">&nbsp;
            <div class="bar-indicatorP">&nbsp;</div>
        </div>-->
@@ -140,9 +152,9 @@ font-size:12px !important;
 
 
    <div class="AOI_P-item-row">
-       <div class="AOI_P-item-name AOI_P-item-value-label">Budget (MTD)</div>
-       <div id="AOI_PBudVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="ec29d7ef3dda4548b17d385a783794b8" /></div>
-       <div class="w65 ytdVal">78</div>
+       <div class="AOI_P-item-name AOI_P-item-value-label">Budget</div>
+       <div id="AOI_PBudVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="f5b78367128f4f898ae5e18b65bc110b" /></div>
+       <div class="w65 ytdVal"><SpotfireControl id="a1109b02a6e94ca08fbb61da192d76ff" /></div>
   <!-- <div class="background-barP">&nbsp;
            <div class="bar-indicatorP">&nbsp;</div>
        </div> -->
@@ -151,12 +163,12 @@ font-size:12px !important;
 
 
 <div class="AOI_P-item-row">
-   <div class="AOI_P-item-name AOI_P-item-value-label">Forecast (MTD)</div>
+   <div class="AOI_P-item-name AOI_P-item-value-label">Forecast</div>
    
-<span id="compare_P" style="visibility:hidden"><SpotfireControl id="1a28386c9d1d4298ae97f0bb85579e5a" /></span>
+<span id="compare_P" style="visibility:hidden"><SpotfireControl id="e404e9b4d4e24dc0be12014667a3213c" /></span>
 
-<div id="AOI_PVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="ab96ff6d71e84898bbbe716c9c5f8579" /></div>
-<div class="w65 ytdVal">78</div>
+<div id="AOI_PVal" class="item-value item-value-bigvalue w65 mlAuto mtdVal"><SpotfireControl id="0fb82762e76345a494459d2bbb174d01" /></div>
+<div class="w65 ytdVal"><SpotfireControl id="425f9555a4fe43d48c9d3efa72f4d574" /></div>
    <!-- <div class="background-barP">&nbsp; 
            <div class="bar-indicatorP">&nbsp;</div>	    
        </div> -->
@@ -194,6 +206,30 @@ else {
 
 
 </script>
+<!-------------------------------------->
+<script>
+
+
+$("#compare_P").on('DOMSubtreeModified',function(){
+	if(!isNaN(parseFloat($(this).text()))) {
+	 var compare_P = parseFloat($(this).text());
 
 
 
+	 if(compare_P == 1) {
+	 $("#AOI_PActVal2").css("background", "#84d9a3");
+	 }
+
+	 else if (compare_P == 2) {
+	  $("#AOI_PActVal2").css("background", "#f8e487");
+	 }
+
+	else {
+	  $("#AOI_PActVal2").css("background", "#F58D8D");
+	}
+	}
+		 
+  })
+
+
+</script>
