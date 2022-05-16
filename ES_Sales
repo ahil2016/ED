@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .Won-Lost-Card {
+	    margin-top:0px;            
+	    //max-width: 215px;
+            padding: 6px;
+            border: 1px solid #ccc;
+	    border-radius:6px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px 0 #ccc, 0 2px 6px 0 #ccc;
+        }
+        .Won-Lost-Card .title {
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .Won-Lost-Card .item-row {
+            display: flex;
+	    flex-wrap:wrap;
+            margin-bottom: 2px;
+        }
+        .Won-Lost-Card .item-row .Won-Lost-item-value {
+            margin-left: auto;
+        }
+	.Won-Lost-Card .item-row .item-name {
+            font-size:11px;
+	
+        }
+
+	.background-bar {
+            margin-top:2px;
+	    width: 80%;
+            background: #ccc;
+            height: 9px;
+            position: relative;
+        }
+	.Won-Lost-item-value-bigvalue span{
+	font-size:16px !important;
+	}
+	.Won-Lost-item-value-label{
+	font-size:12px !important;
+	}
+	
+        #budgetVal3+.background-bar .bar-indicator {
+            width:17.7% !Important;
+            background-color:#9a9a9a;
+            position: absolute;
+            top: 0px;
+            height: 9px;
+        }
+	
+        #revenueVal2+.background-bar .bar-indicator {
+            background-color:#72c3f3;
+            position: absolute;
+            top: 0px;
+	    width: 8% !important;
+            height: 9px;
+        }
+	.Won-Lost-Card .item-row .Won-Lost-item-value.rpBudget span {
+		color: #fff !important;
+		 background: linear-gradient(-135deg,#b2a1e2,#b2a1e2);
+		 padding:4px 6px;
+		 border-radius: 15px;
+		 font-size:11px;
+	}
+
+.Won-Lost-Card .item-row .Won-Lost-item-value.Won-Lost-item-value-bigvalue span {
+		color: #4a4a4a !important;
+		 
+		 
+	}
+    </style>
+</head>
+
+<body>
+    <div id="Won-LostBudgetDiv1" class="Won-Lost-Card Won-Lost-Card-budget">
+        <div class="item-row">
+            <div class="item-name Won-Lost-item-value-label">Won</div>
+            <div id="revenueVal2" class="Won-Lost-item-value Won-Lost-item-value-bigvalue"><SpotfireControl id="b62d82e460ea48a188d59f6608aa1e62" /></div>
+		<div class="background-bar">&nbsp;
+                <div class="bar-indicator">&nbsp;</div>
+            </div>
+        </div>
+        <div class="item-row">
+            <div class="item-name Won-Lost-item-value-label">Lost</div>
+            <div id="budgetVal3" class="Won-Lost-item-value Won-Lost-item-value-bigvalue"><SpotfireControl id="5aeede6a44a645f397cf4033c5114c1d" /></div>
+	    <div class="background-bar">&nbsp;
+                <div class="bar-indicator">&nbsp;</div>
+            </div>
+        </div>
+	<div class="budget-bar"></div>
+	
+       <br>
+        <div class="item-row">
+            <div class="item-name revperbud Won-Lost-item-value-label">Win Rate%</div>
+            <div class="Won-Lost-item-value rpBudget"><SpotfireControl id="f1fb991c3d80466693ebb32d6a42910d" /></div>
+
+
+        </div>
+    </div>
+</body>
+
+<script>
+$(document).ready(function(){
+var ytdBudgetEle1 = document.getElementById('ytdBudgetDiv1');
+$(ytdBudgetEle1).on('DOMSubtreeModified',function(){
+	var budgetValText1 = document.getElementById('budgetVal3').innerText.replace('$', '');
+        var budgetVal3 = parseInt(budgetValText1);
+        var revenuteText1 = document.getElementById('revenueVal2').innerText.replace('$', '');
+        var revenueVal2 = parseInt(revenuteText1);
+        var revenueBarIndicator1 = document.querySelector('#revenueVal2+.background-bar .bar-indicator');
+        revenueBarIndicator1.style.width = budgetVal3 === revenueVal2 ? ('90%') : (budgetVal3 < revenueVal2 ? ((90 * (revenueVal2 / budgetVal3)) > 100 ? '100%' : (90 * (revenueVal2 / budgetVal3) + '%')) : (90 * (revenueVal2 / budgetVal3) + '%'));
+  })
+})
+        
+    </script>
+</html>
+
+
+
