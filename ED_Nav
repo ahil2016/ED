@@ -1,0 +1,433 @@
+<style>
+.sfc-style-root .sf-element-panel-area{
+z-index: 1;
+}
+.sfc-style-root .sf-element-scroll-bar {
+
+display:none !important;
+}
+
+	.main-title-wrapper {
+		display: flex;
+		position: fixed;
+		top: 30px;
+		left: 0px;
+		width: 100%;
+		z-index: 1;
+		background-color: #fff;
+		border-bottom: 1px solid #ddd;
+		padding: 7px 32px;
+	}
+	
+	
+
+	.main-title-wrapper .logo {
+		height: 35px;
+	}
+
+	.main-title-wrapper .title {
+		margin-left: auto;
+		margin-right: auto;
+		//text-transform: uppercase;
+		
+	}
+
+	.main-title-wrapper .info {
+		margin-right: 50px;
+	}
+
+	.info svg {
+
+		cursor: pointer;
+
+	}
+
+	.main-title-wrapper .title h1 {
+		margin: 0px;
+
+	}
+
+	.main-title-wrapper .logo img {
+		height: 80%;
+		width: auto;
+	}
+
+	.navlist {
+		background-color: #fff;
+		margin: 0px;
+		display: flex;
+		justify-content: center;
+		padding: 8px 0px;
+		position: fixed;
+		top: 80px;
+		left: 0px;
+		z-index: 1;
+		width: 100%;
+
+	}
+
+	.navlist li {
+		margin: 0px;
+		list-style-type: none;
+		// margin-right: 24px;
+		position: relative;
+	}
+
+	.navlist li a {
+		margin: 0px;
+		color: #707070 !important;
+
+	}
+
+	.navlist li a:hover {
+		color: #707070 !important;
+		text-decoration: none;
+		//border-bottom: 2px solid #0097d1;
+
+	}
+
+	.menu-arrow {
+		fill: #707070;
+		margin-left: 4px;
+		transform: rotate(270deg);
+		transition: transform .45s ease 0s;
+	}
+
+	.navlist li:hover .menu-arrow {
+		fill: #707070;
+		transform: rotate(90deg);
+	}
+
+	.listitem {
+		border-left: 1px solid #707070;
+		padding: 6px 38px;
+	}
+
+	.listitem:last-child {
+		border-right: 1px solid #707070;
+	}
+
+	.dropdown-links {
+		max-height: 0px;
+		position: absolute;
+		top: 29px;
+		left: 0px;
+		z-index: 9999;
+		overflow: hidden;
+		transition: max-height .45s ease 0s;
+		box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.navlist li:hover .dropdown-links {
+		max-height: 1000px;
+	}
+
+	.dropdown-links ul {
+		padding: 16px;
+		background: #fff;
+		min-width: 315px;
+		padding: 0px;
+
+	}
+
+	.dropdown-links ul li  {
+		
+		color: #707070 !important;
+		cursor: pointer;
+		//padding: 8px 16px;
+	}
+	.dropdown-links ul li a{
+		width: 100%;
+		display: inline-block;
+		padding: 8px 16px;
+	}
+	
+
+
+	.dropdown-links ul li:hover {
+		background-color: #ddd;
+		color: #fff !important;
+	}
+
+	.navlink {
+
+		text-transform: uppercase;
+	}
+
+	.model-wraper {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		background: rgba(0, 0, 0, 0.4);
+		z-index: 1000;
+		text-align: center;
+		display: none;
+	}
+
+	.model-wraper.show-modal {
+		display: block;
+	}
+
+	.model-wraper .content {
+		background-color: #fff;
+		display: inline-block;
+		margin-top: 10%;
+		width: 500px;
+		//min-height: 250px;
+
+	}
+
+	.model-wraper .content .model-header {
+		padding: 16px;
+		font-size: 20px;
+		border-bottom: 1px solid #ddd;
+
+	}
+
+	.model-wraper .content .model-header .close {
+		float: right;
+		cursor: pointer;
+
+
+	}
+
+	.model-wraper .model-body {
+
+		display: flex;
+		flex-wrap: wrap;
+		//min-height: 196px;
+		padding: 16px;
+		padding-top: 20px;
+		//align-items: center;
+		//justify-content: center;
+		font-size: 16px;
+
+	}
+
+	.model-wraper .model-footer {
+		border-top: 1px solid #ddd;
+		padding: 16px;
+		display:flex;
+		
+		
+	}
+
+	.model-wraper .model-body .msg-title {
+
+		padding-left: 8px;
+		padding-bottom: 8px;
+
+	}
+
+	.model-wraper .model-body .msg-text {
+
+		padding-left: 24px;
+		font-size: 14px;
+		font-weight:100px;
+		
+		
+
+	}
+	.model-wraper.utilization-info-modal .ok{
+		color: #fff;
+		background: #1890ff;
+		border-color: #1890ff;
+		margin-left:auto;
+		margin-right:24px;
+		padding:4px 15px;
+		cursor:pointer;
+		border: 1px solid;
+		
+		
+
+}
+.navlist .date-li {
+	margin-right: 75px;
+	margin-left: 10px;
+	margin-top:auto;
+}
+
+.navlist li:last-child {
+	margin-right: auto;
+}
+
+.active-menu{
+ border-bottom : 2px solid #3D88FC;
+}
+</style>
+
+
+<div class="main-title-wrapper">
+	<div class="logo">
+
+
+		<img width="50" height="50" style="margin-left:-10px;" src="2838da97d1ba44589feb067208244b47.png" style="border: 0;" />
+	</div>
+	<div class="title">
+		<h1>Early Development (ED) Executive Metrics Dashboard</h1>
+	</div>
+	<div class="info utilization-info-icon">
+		<SpotfireControl id="ce9ebdcb04e64d40b86c1c0c88d32f0e" />
+
+	</div>
+</div>
+
+<ul class='navlist'>
+<li class="date-li">Select Month: <SpotfireControl id="bcb54e98fe5e4bfcb232d1ec40f832dd" />
+</li>
+	<li class='listitem'>
+		<a class='navlink active-menu' href='#'>
+			<span>Home</span>
+
+		</a>
+	</li>
+
+
+
+<li class='listitem'>
+		<a class='navlink' href='#'><span>Financials</span><span><svg width="4.7" height="8"
+					viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+<div class="dropdown-links">
+			<ul>
+<li><SpotfireControl id="857007e61a42401e901f31e7c3a98d9b" /></li>
+<li><SpotfireControl id="6cab089434244070b7611667d0fed1bf" /></li>
+			<ul>
+</div>
+
+
+
+
+
+<li class='listitem'>
+		<a class='navlink' href='#'><span>Sales</span><span><svg width="4.7" height="8"
+					viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+
+<div class="dropdown-links">
+			<ul>
+<li><SpotfireControl id="a42d858c089942be8432854185db78fe" /></li>
+<li><SpotfireControl id="215db5640ee74312b56779bd75bb5d21" /></li>	
+			<ul>
+</div>
+</li>
+<li class='listitem'>
+<a class='navlink' href='#'>
+<span>Marketing</span><span><svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"
+class="menu-arrow">
+<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+</svg></span></a>
+<div class="dropdown-links">
+<ul>
+<li><SpotfireControl id="ab857bb93dad415b80bb6fd7b7c0fa9a" /></li>
+
+
+<ul>
+</div>
+</li>
+
+
+	<li class='listitem'>
+		<a class='navlink' href='#'>
+			<span>Operations</span><span><svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"
+					class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+		<div class="dropdown-links">
+			<ul>
+				<li><SpotfireControl id="d6acdb2a4e324e87a98a8dca1eb5909f" /></li>
+<li><SpotfireControl id="69092c7dfa0349ec9f3dc8da73d6e109" /></li>
+<li><SpotfireControl id="1138b47c4ab74530814c3c1052e908a5" /></li>
+
+				
+				<ul>
+		</div>
+	</li>
+
+	<li class='listitem'>
+		<a class='navlink' href='#'>
+			<span>Customers</span><span><svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"
+					class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+		<div class="dropdown-links">
+			<ul>
+
+<li><SpotfireControl id="0f1d06debeb844acb21031a2e3578940" /></li>
+<li><SpotfireControl id="096e8804e7234b489d11004c992abd43" /></li>
+				
+				<ul>
+		</div>
+	</li>
+
+	<li class='listitem'>
+		<a class='navlink' href='#'>
+			<span>Human Resources</span><span><svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"
+					class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+	<div class="dropdown-links">
+			<ul>
+				
+			<li><SpotfireControl id="91d43e01bf2647d4afbaa14d6c119754" /></li>
+			<li><SpotfireControl id="b246adb7abb3439f98666c607e71fca8" /></li>
+			<li><SpotfireControl id="c692e9a45e624cf9b091671b5a8e5447" /></li>
+				<ul>
+		</div>
+	
+	</li>
+	
+
+	
+	
+	<li class='listitem'>
+		<a class='navlink' href='#'><span>Quality</span><span><svg width="4.7" height="8" viewBox="0 0 16 27"
+					xmlns="http://www.w3.org/2000/svg" class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+<div class="dropdown-links">
+
+			<ul>
+<li><SpotfireControl id="12677cf22f4846c784c1f5e624108ccf" /></li>
+<li><SpotfireControl id="436c1ad2c64547b2bf02ed3b5a8776d2" /></li>
+<li><SpotfireControl id="3f6920f09e694f2b9dbcf65e41c2e4fc" /></li>
+<li><SpotfireControl id="e0db3d7be6fa432fa9e34ff1cfc2432f" /></li>
+<li><SpotfireControl id="7010380a9ed846a085b736e650fb62be" /></li>
+				
+			</ul>
+
+</div>
+
+
+<div class='model-wraper utilization-info-modal'>
+	<div class='content utilization-info-modal-content'>
+		<!-- <div class='model-header'>
+<span>Utilization</span><span class='close'>X</span>
+</div> -->
+
+		<div class='model-body'><span class='icon'><svg viewBox="64 64 896 896" focusable="false"
+					data-icon="info-circle" width="1em" height="1em" fill="#1890ff" aria-hidden="true">
+					<path
+						d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+					</path>
+					<path
+						d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z">
+					</path>
+				</svg></span>
+			<span class='Body-Message'>
+				<div class='msg-title'>CTTS Dashboard Updates</div>
+			</span><span>
+				<div class='msg-text'>"Any informative text that can be provided to the user"</div>
+			</span>
+		</div>
+		<div class='model-footer'>
+			<button class="ok">OK</button>
+		</div>
+	</div>
+
+</div>
+
